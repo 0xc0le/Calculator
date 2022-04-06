@@ -3,6 +3,7 @@ pragma solidity ^0.4.24;
 contract Calculator {
     
     int private lastvalue = 0;
+    uint private lastuintvalue = 0;
 
     function Add(int a, int b) public returns (int) {
         lastvalue = a + b;
@@ -20,11 +21,13 @@ contract Calculator {
     }
 
     function Divide(int a, int b) public returns (int){
+        require (b > 0, "The second parameter should be greater than zero");
         lastvalue = a / b;
         return lastvalue;
     }
 
-    function LastOperation() public constant returns (int) {
-        return lastvalue;
+    function Exponent(uint base, uint exponent) public returns (uint){
+        lastuintvalue = base ** exponent;
+        return lastuintvalue;
     }
 }
