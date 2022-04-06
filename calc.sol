@@ -20,8 +20,8 @@ contract Calculator {
         return lastvalue;
     }
 
-    function Divide(uint numerator, uint denominator, uint precision) public returns (uint){
-        lastuintvalue = (numerator*(uint(10)**uint(precision+1))/denominator)/uint(10);
+    function Divide(uint numerator, uint denominator) public returns (uint){
+        lastuintvalue = (numerator*(uint(10)**(19))/denominator)/uint(10);
         return lastuintvalue;
     }
 
